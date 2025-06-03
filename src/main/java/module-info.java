@@ -4,10 +4,10 @@ module com.example.projets2javafx {
     requires com.google.gson;
 
     exports model;
-    exports View;
+    exports controller;
     exports com.example.projets2javafx;
 
     opens model to com.google.gson;
-    opens View to javafx.fxml;
+    opens controller to javafx.fxml;
     opens com.example.projets2javafx to javafx.graphics;
 }

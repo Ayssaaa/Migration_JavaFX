@@ -1,4 +1,4 @@
-package View;
+package controller;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
