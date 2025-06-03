@@ -32,14 +32,10 @@ public class supprimerMachineController {
     @FXML
     private void onSupprimerClicked(ActionEvent event) {
         String nom = nomField.getText();
-        if (nom.isEmpty()) {
-            messageLabel.setText("Veuillez entrer un nom.");
-            if (nom.trim().isEmpty()) {
-                messageLabel.setText("Veuillez entrer un nom valide.");
-                return;
-                }
+        if (nom.trim().isEmpty()) {
+            messageLabel.setText("Veuillez entrer un nom valide.");
             return;
-        }
+            }
         
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, 
             "Supprimer la machine \"" + nom + "\" ?", 
