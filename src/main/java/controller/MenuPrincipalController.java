@@ -123,14 +123,14 @@ public class MenuPrincipalController extends AnchorPane {
         ex.printStackTrace();
     }
 });
-        btnDessiner.setOnAction((ActionEvent e) -> {
+       /* btnDessiner.setOnAction((ActionEvent e) -> {
     try {
         new Dessiner().show();
     } catch (Exception ex) {
-        messageArea.setText("Impossible d'ouvrir la fenêtre « Créer Machine » : " + ex.getMessage());
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Dessiner » : ");
         ex.printStackTrace();
     }
-});
+});*/
         
                
     }
