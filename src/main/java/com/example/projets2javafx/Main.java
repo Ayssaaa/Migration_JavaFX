@@ -1,6 +1,6 @@
 package com.example.projets2javafx;
 
-import controller.MenuPrincipalController;
+import controller.Menu_Principal;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -9,7 +9,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         
-        MenuPrincipalController root = new MenuPrincipalController();
+        Menu_Principal root = new Menu_Principal();
         Scene scene = new Scene(root, 800, 500);
         stage.setTitle("Menu Principal");
         stage.setScene(scene);
