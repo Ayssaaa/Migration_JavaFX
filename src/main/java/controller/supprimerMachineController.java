@@ -70,7 +70,7 @@ public class supprimerMachineController {
             currentStage.close();
         } catch (IOException e) {
             messageLabel.setText("Erreur lors du chargement du menu.");
-            e.printStackTrace();
+            e.printStackTrace(); 
         }
     }
 }
