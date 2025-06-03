@@ -5,7 +5,7 @@
 package model;
 
 import java.util.List;
-import util.FichierProduit;
+import util.FichierMachine;
 
 /**
  *
