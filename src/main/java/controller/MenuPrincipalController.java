@@ -13,24 +13,21 @@ import javafx.scene.Node;
 
 import java.io.IOException;
 
-/**
- * MenuPrincipalController devient désormais un composant JavaFX (hérite d’AnchorPane),
- * construit 100% en code (pas de FXML). On peut l’utiliser comme racine d’une scène.
- */
+
 public class MenuPrincipalController extends AnchorPane {
 
     private final TextArea messageArea;
 
     public MenuPrincipalController() {
-        // --- 1) Création du Label Titre ---
-        Label titleLabel = new Label("Gestion des Machines");
+        
+        Label titleLabel = new Label("Gestion de l'atelier");
         titleLabel.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;");
 
-        // --- 2) Boutons pour Machine ---
-        Button btnCreerMachine     = new Button("Créer Machine");
-        Button btnAfficherMachines = new Button("Afficher Machines");
-        Button btnModifierMachine  = new Button("Modifier Machine");
-        Button btnSupprimerMachine = new Button("Supprimer Machine");
+        
+        Button btnCreerMachine     = new Button("Créer");
+        Button btnAfficherMachines = new Button("Afficher");
+        Button btnModifierMachine  = new Button("Modifier");
+        Button btnSupprimerMachine = new Button("Supprimer");
 
         btnCreerMachine.setPrefWidth(140);
         btnAfficherMachines.setPrefWidth(140);
@@ -50,7 +47,7 @@ public class MenuPrincipalController extends AnchorPane {
         );
         hboxMachines.setAlignment(Pos.CENTER);
 
-        // --- 3) Boutons Dessiner / Calculer (inchangés) ---
+        
         Button btnDessiner = new Button("Dessiner");
         Button btnCalculer = new Button("Calculer");
 
@@ -63,7 +60,7 @@ public class MenuPrincipalController extends AnchorPane {
         HBox hboxAutres = new HBox(15, btnDessiner, btnCalculer);
         hboxAutres.setAlignment(Pos.CENTER);
 
-        // --- 4) TextArea pour messages ---
+        
         messageArea = new TextArea();
         messageArea.setPrefHeight(200);
         messageArea.setWrapText(true);
@@ -75,7 +72,7 @@ public class MenuPrincipalController extends AnchorPane {
             "-fx-background-radius: 5;"
         );
 
-        // --- 5) Assemblage dans un VBox ---
+        
         VBox vbox = new VBox(20,
             titleLabel,
             hboxMachines,
@@ -85,7 +82,7 @@ public class MenuPrincipalController extends AnchorPane {
         vbox.setAlignment(Pos.CENTER);
         vbox.setPadding(new Insets(30));
 
-        // --- 6) Ajout du VBox dans cet AnchorPane ---
+       
         this.getChildren().add(vbox);
         this.setStyle("-fx-background-color: #f0f4f8;");
         AnchorPane.setTopAnchor(vbox, 0.0);
@@ -93,36 +90,52 @@ public class MenuPrincipalController extends AnchorPane {
         AnchorPane.setLeftAnchor(vbox, 0.0);
         AnchorPane.setRightAnchor(vbox, 0.0);
 
-        // --- 7) Handlers pour les boutons Machine ---
+        
         btnCreerMachine.setOnAction((ActionEvent e) -> {
     try {
         new Creer_Machine().show();
     } catch (Exception ex) {
-        messageArea.setText("Impossible d'ouvrir la fenêtre « Créer Machine » : " + ex.getMessage());
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Créer Machine » : ");
         ex.printStackTrace();
     }
 });
         btnAfficherMachines.setOnAction((ActionEvent e) -> {
     try {
-        new Creer_Machine().show();
+        new Afficher_Machine().show();
+    } catch (Exception ex) {
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Afficher Machine » : " );
+        ex.printStackTrace();
+    }
+});
+        btnModifierMachine.setOnAction((ActionEvent e) -> {
+    try {
+        new Modifier_Machine().show();
+    } catch (Exception ex) {
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Modifier Machine » : ");
+        ex.printStackTrace();
+    }
+});
+        btnSupprimerMachine.setOnAction((ActionEvent e) -> {
+    try {
+        new supprimer_machine().show();
+    } catch (Exception ex) {
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Supprimer Machine » : ");
+        ex.printStackTrace();
+    }
+});
+        btnDessiner.setOnAction((ActionEvent e) -> {
+    try {
+        new Dessiner().show();
     } catch (Exception ex) {
         messageArea.setText("Impossible d'ouvrir la fenêtre « Créer Machine » : " + ex.getMessage());
         ex.printStackTrace();
     }
 });
         
-        btnModifierMachine.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/Modifier_Machine.fxml", "Modifier une machine"));
-        btnSupprimerMachine.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/Supprimer_Machine.fxml", "Supprimer une machine"));
-
-        // --- 8) Handlers pour Dessiner / Calculer (inchangés) ---
-        btnDessiner.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/dessiner_produit.fxml", "Dessiner un produit"));
-        btnCalculer.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/calculer_produit.fxml", "Calculer un produit"));
+               
     }
 
-    /**
-     * Charge un FXML et ouvre une nouvelle fenêtre. 
-     * Si l’opération échoue, on affiche le message dans messageArea.
-     */
+    
     private void ouvrirFenetre(String cheminFXML, String titre) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(cheminFXML));
