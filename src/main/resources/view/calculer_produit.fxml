@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.CalculerProduitController"
+            prefHeight="250.0" prefWidth="400.0">
+
+    <VBox spacing="10" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+        <Label text="Prix HT :" />
+        <TextField fx:id="prixField"/>
+
+        <Label text="Quantité :" />
+        <TextField fx:id="quantiteField"/>
+
+        <Button text="Calculer TTC" onAction="#onCalculerClicked"/>
+        <Label fx:id="resultatLabel" text="Résultat TTC :"/>
+    </VBox>
+</AnchorPane>

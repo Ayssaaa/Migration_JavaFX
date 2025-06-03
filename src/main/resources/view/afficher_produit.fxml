@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="controller.AfficherProduitController"
+            prefWidth="600" prefHeight="400">
+
+    <VBox spacing="15" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Liste des produits" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <TextArea fx:id="produitTextArea" prefHeight="300" wrapText="true" editable="false"/>
+
+        <Button text="Actualiser" onAction="#onActualiserClicked" prefWidth="120" alignment="CENTER"/>
+    </VBox>
+
+</AnchorPane>

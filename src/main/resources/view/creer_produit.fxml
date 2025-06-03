@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.CreerProduitController"
+            prefHeight="300.0" prefWidth="400.0">
+
+    <VBox spacing="10" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+          AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Créer un produit" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="nomField" promptText="Nom du produit"/>
+        <TextField fx:id="prixField" promptText="Prix du produit"/>
+
+        <Button text="Valider" onAction="#onValiderClicked"/>
+        <Button text="Retour" onAction="#onRetourClicked"/>
+
+        <Label fx:id="messageLabel"/>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ModifierProduitController"
+            prefHeight="300.0" prefWidth="400.0">
+
+    <VBox spacing="10">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Nom du produit à modifier :"/>
+        <TextField fx:id="ancienNomField"/>
+
+        <Label text="Nouveau nom :"/>
+        <TextField fx:id="nouveauNomField"/>
+
+        <Label text="Nouveau prix :"/>
+        <TextField fx:id="nouveauPrixField"/>
+
+        <Button text="Modifier" onAction="#onModifierProduit"/>
+        <Label fx:id="statusLabel"/>
+    </VBox>
+</AnchorPane>

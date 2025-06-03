@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MenuPrincipalController"
+            prefHeight="500.0" prefWidth="800.0"
+            style="-fx-background-color: #f0f4f8;">
+
+    <VBox spacing="20" alignment="CENTER">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="Gestion des Produits" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+
+        <HBox spacing="15" alignment="CENTER">
+            <ComboBox fx:id="comboChoix" prefWidth="200"/>
+            <Button text="Créer Produit" onAction="#onCreerProduitClicked" prefWidth="140"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Afficher" onAction="#onAfficherClicked" prefWidth="100"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Modifier" onAction="#onModifierClicked" prefWidth="100"
+                    style="-fx-background-color: #FFC107; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Supprimer" onAction="#onSupprimerClicked" prefWidth="100"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="btnDessiner" text="Dessiner" onAction="#onDessinerClicked" prefWidth="120"
+                    style="-fx-background-color: #9C27B0; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="btnCalcul" text="Calculer" onAction="#onCalculerClicked" prefWidth="120"
+                    style="-fx-background-color: #009688; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <TextArea fx:id="messageArea" prefHeight="200" wrapText="true"
+                  style="-fx-font-size: 14px; -fx-border-color: #ccc; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+    </VBox>
+</AnchorPane>

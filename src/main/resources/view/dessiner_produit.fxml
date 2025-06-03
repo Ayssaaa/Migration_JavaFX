@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.DessinerProduitController"
+            prefWidth="500" prefHeight="300">
+
+    <Canvas fx:id="canvas" width="500" height="300" />
+</AnchorPane>
