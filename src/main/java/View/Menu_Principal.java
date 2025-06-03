@@ -1,4 +1,4 @@
-package controller;
+package View;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;

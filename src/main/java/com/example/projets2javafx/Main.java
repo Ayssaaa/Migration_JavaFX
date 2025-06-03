@@ -1,6 +1,6 @@
 package com.example.projets2javafx;
 
-import controller.Menu_Principal;
+import View.Menu_Principal;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
