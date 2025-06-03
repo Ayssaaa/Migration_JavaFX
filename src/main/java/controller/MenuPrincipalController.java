@@ -94,8 +94,23 @@ public class MenuPrincipalController extends AnchorPane {
         AnchorPane.setRightAnchor(vbox, 0.0);
 
         // --- 7) Handlers pour les boutons Machine ---
-        btnCreerMachine.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/Creer_Machine.fxml", "Créer une machine"));
-        btnAfficherMachines.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/afficher_machine.fxml", "Liste des machines"));
+        btnCreerMachine.setOnAction((ActionEvent e) -> {
+    try {
+        new Creer_Machine().show();
+    } catch (Exception ex) {
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Créer Machine » : " + ex.getMessage());
+        ex.printStackTrace();
+    }
+});
+        btnAfficherMachines.setOnAction((ActionEvent e) -> {
+    try {
+        new Creer_Machine().show();
+    } catch (Exception ex) {
+        messageArea.setText("Impossible d'ouvrir la fenêtre « Créer Machine » : " + ex.getMessage());
+        ex.printStackTrace();
+    }
+});
+        
         btnModifierMachine.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/Modifier_Machine.fxml", "Modifier une machine"));
         btnSupprimerMachine.setOnAction((ActionEvent e) -> ouvrirFenetre("/view/Supprimer_Machine.fxml", "Supprimer une machine"));
 
